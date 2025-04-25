@@ -71,7 +71,7 @@ export default function App() {
   return (
     <div className="h-screen w-screen bg-gray-100">
       {/* Search Bar */}
-      <div className="bg-blue-900 p-4 ">
+      <div className="bg-blue-900 p-4 w-full">
         <input
           type="text"
           value={search}
@@ -96,14 +96,14 @@ export default function App() {
         )}
       </div>
 
-      {/* Main Layout */}
-      <div className="flex">
-        {/* Filters Panel */}
-        <div className="w-1/4 p-4">
-          <Filters filters={filters} setFilters={setFilters} />
 
-          {/* Sort Options */}
-          <div className="mt-4 bg-white py-5 px-3 border-2 rounded-3xl" data-testid="filter-header-sort">
+      <div className="flex flex-col md:flex-row lg:flex-row  justify-center">
+        <div className="m-10">
+        <div className="">
+          <Filters filters={filters} setFilters={setFilters} />
+        </div>
+        <div className="w-1/4 ">
+          <div className="mt-4 bg-white  w-80 py-2 px-4 border-2 rounded-3xl" data-testid="filter-header-sort">
             <h1 className="font-bold mb-2">Sort By</h1>
             <label>
               <input
@@ -128,13 +128,15 @@ export default function App() {
             </label>
           </div>
         </div>
+        </div>
 
         {/* Doctor Profiles List */}
-        <div className="w-3/4 p-4 space-y-4">
+        <div className="w-3/4 p-4 space-y-4 ml-6 md:ml-40">
           {filteredData.map((doc, i) => (
             <Profile key={i} doctor={doc} />
           ))}
         </div>
+
       </div>
     </div>
   );

@@ -20,18 +20,17 @@ export default function Profile({ doctor }) {
   
     return (
       <div className="my-10" data-testid="doctor-card">
-        <div className="h-80 w-200 bg-white flex px-10 py-10 rounded-2xl shadow">
-
-          <div className="w-6/12 h-full">
+        <div className=" w-80 md:h-80 md:w-200 bg-white flex flex-col md:flex-row px-10 py-10 rounded-2xl shadow">
+          <div className="md:w-6/12 h-full">
             <div className="flex items-center space-x-4">
               <img
                 src={photo || '/profile.avif'} 
                 alt="Doctor"
-                className="h-40 rounded-full"
+                className="h-20 md:h-40 rounded-full"
                 data-testid="doctor-image"
               />
-              <div className="flex flex-col">
-                <h1 className="font-extrabold text-xl" data-testid="doctor-name">
+              <div className="flex flex-row md:flex-col">
+                <h1 className="font-extrabold text-lg md:text-xl" data-testid="doctor-name">
                   {displayValue(name)}
                 </h1>
                 <h2
@@ -50,6 +49,7 @@ export default function Profile({ doctor }) {
                 </p> */}
               </div>
             </div>
+            
             <div className="mx-10 mt-3">
               <p>{displayValue(hospital_name)}</p>
               <p>{displayValue(location)}</p>
@@ -70,7 +70,7 @@ export default function Profile({ doctor }) {
           </div>
   
 
-          <div className="w-6/12 h-full flex flex-col">
+          <div className="md:w-6/12 h-full flex flex-col">
             <div
               className="w-full h-full flex justify-end items-end text-2xl font-extrabold px-5"
               data-testid="doctor-fee"
