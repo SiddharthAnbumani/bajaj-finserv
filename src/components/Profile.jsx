@@ -1,5 +1,5 @@
 export default function Profile({ doctor }) {
-    // Destructuring data from the doctor object with default values
+
     const {
       name,
       specialties,
@@ -15,17 +15,17 @@ export default function Profile({ doctor }) {
       video_consult
     } = doctor;
   
-    // Helper function to handle empty or undefined values and return empty string instead of 'N/A'
+
     const displayValue = (value) => (value ? value : '');
   
     return (
       <div className="my-10" data-testid="doctor-card">
         <div className="h-80 w-200 bg-white flex px-10 py-10 rounded-2xl shadow">
-          {/* Left section: Doctor's Info */}
+
           <div className="w-6/12 h-full">
             <div className="flex items-center space-x-4">
               <img
-                src={photo || '/profile.avif'} // Use the doctor's photo or fallback to a default
+                src={photo || '/profile.avif'} 
                 alt="Doctor"
                 className="h-40 rounded-full"
                 data-testid="doctor-image"
@@ -39,7 +39,7 @@ export default function Profile({ doctor }) {
                   data-testid="doctor-specialty"
                 >
                   {specialties && specialties.length > 0
-                    ? specialties.map(specialty => specialty.name).join(', ') // Extract names of specialties
+                    ? specialties.map(specialty => specialty.name).join(', ') 
                     : ''}
                 </h2>
                 <h3 className="font-semibold text-lg">
@@ -69,7 +69,7 @@ export default function Profile({ doctor }) {
             </div>
           </div>
   
-          {/* Right section: Fees, Appointment, and Experience */}
+
           <div className="w-6/12 h-full flex flex-col">
             <div
               className="w-full h-full flex justify-end items-end text-2xl font-extrabold px-5"

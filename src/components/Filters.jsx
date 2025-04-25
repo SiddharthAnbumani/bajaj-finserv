@@ -2,14 +2,14 @@
 
 import { useState, useEffect } from 'react';
 
-// Filters component to handle both the consultation mode and specialties filters
+
 export default function Filters({ filters, setFilters }) {
   
   const [consultationMode, setConsultationMode] = useState(filters.mode || '');
   const [specialties, setSpecialties] = useState(filters.specialties || []);
 
   useEffect(() => {
-    // Update the parent component when filters change
+
     setFilters({ mode: consultationMode, specialties });
   }, [consultationMode, specialties, setFilters]);
 
@@ -45,7 +45,7 @@ export default function Filters({ filters, setFilters }) {
       </div>
       <hr />
       
-      {/* Specialties Filter */}
+
       <div className="h-10 flex items-center">
         <h1 className="font-semibold px-4 text-blue-500">Specialities</h1>
       </div>
@@ -54,7 +54,7 @@ export default function Filters({ filters, setFilters }) {
         <Scroll handleSpecialtyChange={handleSpecialtyChange} />
       </div>
 
-      {/* Mode of Consultation Filter */}
+
       <div className="px-5">
         <h1 className="font-extrabold">Mode of consultation</h1>
         <div className="flex flex-col">
@@ -97,7 +97,7 @@ export default function Filters({ filters, setFilters }) {
   );
 }
 
-// Scroll Component to display the specialties checkboxes
+
 function Scroll({ handleSpecialtyChange }) {
   const specialties = [
     'General Physician', 'Dentist', 'Dermatologist', 'Paediatrician',

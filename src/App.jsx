@@ -14,7 +14,6 @@ export default function App() {
 
   useEffect(() => {
     axios.get(API_URL).then(res => {
-      console.log(res.data); 
       setData(res.data);
     });
   }, []);
@@ -72,14 +71,14 @@ export default function App() {
   return (
     <div className="h-screen w-screen bg-gray-100">
       {/* Search Bar */}
-      <div className="bg-blue-900 p-4 flex justify-center">
+      <div className="bg-blue-900 p-4 ">
         <input
           type="text"
           value={search}
           onChange={handleSearchChange}
           data-testid="autocomplete-input"
           placeholder="Search Symptoms, Doctors, Specialists, Clinics..."
-          className="w-[90%] p-2 rounded bg-white placeholder:px-10 placeholder:font-semibold"
+          className="w-full p-2 rounded bg-white placeholder:px-10 placeholder:font-semibold"
         />
         {suggestions.length > 0 && (
           <ul className="bg-white rounded shadow">
@@ -104,7 +103,7 @@ export default function App() {
           <Filters filters={filters} setFilters={setFilters} />
 
           {/* Sort Options */}
-          <div className="mt-4" data-testid="filter-header-sort">
+          <div className="mt-4 bg-white py-5 px-3 border-2 rounded-3xl" data-testid="filter-header-sort">
             <h1 className="font-bold mb-2">Sort By</h1>
             <label>
               <input
